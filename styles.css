@@ -1,0 +1,143 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basal reset for margener, padding og box-sizing for alle elementer */
+body {
+  font-family: "Segoe UI", Arial, sans-serif; /* Segoe UI som primær skrifttype */
+  background-color: #161615; /* Baggrundsfarve for hele siden */
+  color: #ffffff; /* Generel tekstfarve */
+  line-height: 1.6; /* Linjehøjde for bedre læsbarhed */
+}
+
+header {
+  background-color: #2c2c2b; /* Baggrundsfarve for header */
+  padding: 20px; /* Polstring omkring header-indhold */
+  text-align: center; /* Centrer tekst i header */
+  color: white; /* Tekstfarve i header */
+  border-radius: 15px; /* Afrundede hjørner */
+  margin: 20px auto; /* Margin for at give lidt plads omkring headeren */
+  max-width: 1000px; /* Maksimal bredde for headeren */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Skyggeeffekt */
+  border: 1px solid #393938; /* Kantfarve og tykkelse for header */
+}
+
+.logo {
+  display: flex; /* Flexbox layout for logo og tekst */
+  align-items: center; /* Centrer elementer lodret */
+  justify-content: center; /* Centrer elementer vandret */
+}
+
+.logo img {
+  height: 50px; /* Justér logoets højde efter behov */
+  margin-right: 10px; /* Afstand mellem logo og tekst */
+}
+
+.nav-bar {
+  margin-top: 20px; /* Afstand mellem logo og navigationsmenu */
+}
+
+.nav-bar ul {
+  display: flex; /* Flexbox layout for navigationslinks */
+  justify-content: center; /* Centrer navigationslinks */
+  list-style: none; /* Fjern standard punkttegn */
+}
+
+.nav-bar ul li {
+  margin: 0 15px; /* Afstand mellem navigationslinks */
+}
+
+.nav-bar ul li a {
+  color: #ffffff; /* Farve for navigationslinks */
+  text-decoration: none; /* Fjern understregning */
+  font-size: 1.2em; /* Justér skriftstørrelse */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Overgang for farveændring og understregning */
+  position: relative; /* For at kunne bruge ::after pseudo-element */
+}
+
+.nav-bar ul li a::after {
+  content: ""; /* Tomt indhold for pseudo-element */
+  display: block; /* Gør det til et blok-element */
+  width: 0; /* Start bredde for understregning */
+  height: 2px; /* Højde for understregning */
+  background: #21c6ec; /* Farve for understregning */
+  transition: width 0.3s ease; /* Overgang for breddeændring */
+  position: absolute; /* Absolut positionering */
+  left: 0; /* Justér startpunkt til venstre */
+  bottom: -5px; /* Justér startpunkt til bunden */
+}
+
+.nav-bar ul li a:hover::after {
+  width: 100%; /* Fuld bredde ved hover */
+}
+
+main {
+  max-width: 800px; /* Maksimal bredde for hovedindhold */
+  margin: 20px auto; /* Centrer hovedindholdet og tilføj margin */
+  padding: 20px; /* Indvendig polstring for hovedindholdet */
+  background-color: #161615; /* Baggrundsfarve for hovedindhold */
+  border-radius: 8px; /* Afrunding af hjørner for en mere blød visuel stil */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Skyggeeffekt for at løfte hovedindholdet */
+}
+
+.fixed-box,
+.collapsible-section {
+  margin-bottom: 30px; /* Afstand mellem sektioner */
+  padding: 20px; /* Indvendig polstring for hver sektion */
+  background-color: #2c2c2b; /* Baggrundsfarve inden i hver sektion */
+  border: 1px solid #393938; /* Kantfarve og tykkelse for hver sektionskant */
+  border-radius: 8px; /* Afrunding af hjørner for hver sektion */
+  overflow: hidden; /* Skjul indhold, der overstiger sektionens dimensioner */
+}
+
+.fixed-box h2 {
+  color: #ffffff; /* Overskriftsfarve for den faste boks */
+  margin-bottom: 15px; /* Afstand mellem overskrift og indhold */
+}
+
+section h2 {
+  color: #ffffff; /* Overskriftsfarve for hver sektion */
+  border-bottom: 2px solid transparent; /* Streg under overskrift for at adskille den */
+  padding-bottom: 5px; /* Afstand mellem overskrift og sektionens indhold */
+  margin-bottom: 15px; /* Afstand mellem overskrift og efterfølgende indhold */
+  cursor: pointer; /* Gør overskriften til en pil */
+  display: flex; /* Flexbox layout for at justere ikonet */
+  justify-content: space-between; /* Placering af ikonet til højre */
+  transition: border-color 0.3s ease; /* Overgang for kantfarveændring */
+}
+
+section h2:hover {
+  border-color: #21c6ec; /* Farveændring ved hover */
+}
+
+section p {
+  margin-bottom: 15px; /* Afstand mellem afsnitstekst */
+}
+
+ul {
+  list-style-type: none; /* Fjern punkttegn for listeelementer */
+  padding: 0; /* Fjern indvendig polstring for listeelementer */
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden; /* Skjul indhold, der overstiger max-height */
+  transition: max-height 0.3s ease-out; /* Overgang for max-height */
+}
+
+.collapsible-section.open .collapsible-content {
+  max-height: 1000px; /* Tilpas efter behov */
+}
+
+.styled-link {
+  color: #21c6ec; /* Default link color */
+  text-decoration: none; /* Underline style */
+}
+
+.styled-link:hover {
+  color: #21c6ec; /* Link color on hover */
+  text-decoration: underline; /* Remove underline on hover */
+}
